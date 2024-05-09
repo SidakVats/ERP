@@ -1,30 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Ecommerce, Orders, Employees, Customers } from "./pages";
 import "./App.css";
 
-
 import Login from "./pages/Auth/Login";
-// import SignUp from "./pages/Auth/SignUp";
+import SignUp from "./pages/Auth/SignUp";
+import Preloader from "../src/components/Preloader";
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); // Display preloader for at least 3 seconds
+
+    return () => clearTimeout(timer); // Clear timeout on component unmount
+  }, []);
+
   return (
     <BrowserRouter>
-      <Routes>
-        {/* dashboard  */}
-        <Route path="/dashboard" element={<Ecommerce />} />
-        <Route path="/dashboard" element={<Ecommerce />} />
+      {loading ? (
+        <Preloader />
+      ) : (
+        <Routes>
+          {/* dashboard */}
+          <Route path="/dashboard" element={<Ecommerce />} />
 
-        {/* pages  */}
-        <Route path="/orders" element={<Orders />} />
-        <Route path="/employees" element={<Employees />} />
-        <Route path="/customers" element={<Customers />} />
+          {/* pages */}
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/employees" element={<Employees />} />
+          <Route path="/customers" element={<Customers />} />
 
-        {/* Auth Pages */}
-        <Route path="/" element={<Login />} />
-        {/* <Route path="/signup" element={<SignUp />} /> */}
-      </Routes>
+          {/* Auth Pages */}
+          <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      )}
     </BrowserRouter>
   );
 };

@@ -16,16 +16,17 @@ const LoginForm = () => {
             type="text"
             className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
             id="email"
-            placeholder="Enter Your Emaill"
+            placeholder="Enter Your Email"
           />
         </div>
-        <div className="text-lg mt-2 font-medium">
-          <label htmlFor="password">Password</label>
+        <div className="mt-2">
+          <label htmlFor="password" className="text-lg font-medium">Password</label>
           <input
             type="password"
             className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
             id="password"
             placeholder="Enter Your Password"
+            required
           />
         </div>
         <div className="mt-8 flex justify-between items-center">
@@ -35,8 +36,8 @@ const LoginForm = () => {
               Remember Me
             </label>
           </div>
-          <button className="font-medium text-base text-violet-500">
-            Forget Password
+          <button onClick={() => (window.location.href = "/signup")} className="font-medium text-base bg-violet-500 text-white active:scale-[0.98] transition-all active:duration-100 hover:scale-[1.01] ease-in-out p-2 rounded-xl">
+            Sign Up 
           </button>
         </div>
         <div className="flex items-center justify-between my-8">
@@ -46,14 +47,21 @@ const LoginForm = () => {
         </div>
         <div>
           <span>
-            By Logging In, <p>you agree to <span className="text-violet-500 cursor-pointer">portal.thehouseofskk.com</span> Privacy Policy and Terms Of Use</p>
+            By Logging In,{" "}
+            <p>
+              you agree to{" "}
+              <span className="text-violet-500 cursor-pointer">
+                www.sidakvats.in
+              </span>{" "}
+              Privacy Policy and Terms Of Use
+            </p>
           </span>
         </div>
         <div className="mt-8 flex flex-col gap-y-4">
           <button className="bg-violet-500 text-white text-lg font-bold py-3 rounded-xl active:scale-[0.98] transition-all active:duration-100 hover:scale-[1.01] ease-in-out ">
             Sign in
-          </button>       
-        </div>      
+          </button>
+        </div>
       </div>
     </div>
   );
