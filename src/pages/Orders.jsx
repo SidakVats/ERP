@@ -10,7 +10,7 @@ import {
   Filter,
   Page,
   ExcelExport,
-  PdfExport,
+ 
   Edit,
   Inject,
 } from "@syncfusion/ej2-react-grids";
@@ -102,10 +102,10 @@ const Orders = () => {
                   // allowPdfExport
                   contextMenuItems={contextMenuItems}
                   editSettings={editing}
-                  rowSelected={(args) => handleOrderClick(args.data)}
-                  onClick={handleOrderClick}
+                  // rowSelected={(args) => handleOrderClick(args.data)}
+                  // onClick={handleOrderClick}
                 >
-                  <ColumnsDirective  onClick={handleOrderClick}>
+                  <ColumnsDirective >
                     {/* eslint-disable-next-line react/jsx-props-no-spreading */}
                     {ordersGrid.map((item, index) => (
                       <ColumnDirective key={index} {...item} />
@@ -120,7 +120,7 @@ const Orders = () => {
                       Page,
                       ExcelExport,
                       Edit,
-                      PdfExport,
+                   
                     ]}
                   />
                 </GridComponent>
