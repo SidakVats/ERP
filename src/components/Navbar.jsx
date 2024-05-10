@@ -3,20 +3,20 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 import { BsChatLeft } from "react-icons/bs";
 import { RiNotification3Line } from "react-icons/ri";
-// import { MdKeyboardArrowDown } from "react-icons/md";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
-// import avatar from "../data/avatar.jpg";
+import avatar from "../data/avatar.jpg";
 import { Cart, Chat, Notification, UserProfile } from ".";
 import { useStateContext } from "../contexts/ContextProvider";
 
 
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  UserButton,
-} from "@clerk/clerk-react";
+// import {
+//   SignedIn,
+//   SignedOut,
+//   SignInButton,
+//   UserButton,
+// } from "@clerk/clerk-react";
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
   <TooltipComponent content={title} position="BottomCenter">
@@ -96,14 +96,14 @@ const Navbar = () => {
           icon={<RiNotification3Line />}
         />
         <div className="flex items-center justify-center">
-          <SignedOut>
+          {/* <SignedOut>
             <SignInButton to="/sign-in" className="px-5 ms-1 py-1 rounded-xl text-white" style={{ backgroundColor: currentColor }}/>
           </SignedOut>
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
-          </SignedIn>
+          </SignedIn> */}
         </div>
-        {/* <TooltipComponent content="Profile" position="BottomCenter">
+        <TooltipComponent content="Profile" position="BottomCenter">
           <div
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
             onClick={() => handleClick("userProfile")}
@@ -121,7 +121,7 @@ const Navbar = () => {
             </p>
             <MdKeyboardArrowDown className="text-gray-400 text-14" />
           </div>
-        </TooltipComponent> */}
+        </TooltipComponent>
 
         {isClicked.cart && <Cart />}
         {isClicked.chat && <Chat />}
