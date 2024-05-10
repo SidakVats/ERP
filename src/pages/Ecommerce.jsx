@@ -37,7 +37,7 @@ const Ecommerce = () => {
     <div>
        <div className={currentMode === 'Dark' ? 'dark' : ''}>
          <div className="flex relative dark:bg-main-dark-bg">
-          <div className="fixed right-10 bottom-28" style={{ zIndex: '10' }}>
+          <div className="fixed right-10 bottom-10" style={{ zIndex: '10' }}>
             <TooltipComponent
               content="Settings"
               position="Top"

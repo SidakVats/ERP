@@ -20,7 +20,9 @@ const LoginForm = () => {
           />
         </div>
         <div className="mt-2">
-          <label htmlFor="password" className="text-lg font-medium">Password</label>
+          <label htmlFor="password" className="text-lg font-medium">
+            Password
+          </label>
           <input
             type="password"
             className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
@@ -36,8 +38,11 @@ const LoginForm = () => {
               Remember Me
             </label>
           </div>
-          <button onClick={() => (window.location.href = "/signup")} className="font-medium text-base bg-violet-500 text-white active:scale-[0.98] transition-all active:duration-100 hover:scale-[1.01] ease-in-out p-2 rounded-xl">
-            Sign Up 
+          <button
+            onClick={() => (window.location.href = "/signup")}
+            className="font-medium text-base bg-violet-500 text-white active:scale-[0.98] transition-all active:duration-100 hover:scale-[1.01] ease-in-out p-2 rounded-xl"
+          >
+            Sign Up
           </button>
         </div>
         <div className="flex items-center justify-between my-8">
@@ -50,9 +55,11 @@ const LoginForm = () => {
             By Logging In,{" "}
             <p>
               you agree to{" "}
-              <span className="text-violet-500 cursor-pointer">
-                www.sidakvats.in
-              </span>{" "}
+              <a href="https://www.sidakvats.in/" target="_blank">
+                <span className="text-violet-500 cursor-pointer">
+                  www.sidakvats.in
+                </span>{" "}
+              </a>
               Privacy Policy and Terms Of Use
             </p>
           </span>

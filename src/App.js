@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Ecommerce, Orders, Employees, Customers } from "./pages";
 import "./App.css";
 
-import Login from "./pages/Auth/Login";
-import SignUp from "./pages/Auth/SignUp";
+// import Login from "./pages/Auth/Login";
+// import SignUp from "./pages/Auth/SignUp";
 import Preloader from "../src/components/Preloader";
 
 const App = () => {
@@ -26,7 +26,9 @@ const App = () => {
       ) : (
         <Routes>
           {/* dashboard */}
-          <Route path="/dashboard" element={<Ecommerce />} />
+          <Route path="/" element={<Ecommerce />} />
+        <Route path="/dashboard" element={<Ecommerce />} />
+
 
           {/* pages */}
           <Route path="/orders" element={<Orders />} />
@@ -34,8 +36,8 @@ const App = () => {
           <Route path="/customers" element={<Customers />} />
 
           {/* Auth Pages */}
-          <Route path="/" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+          {/* <Route path="/sign-up" element={<Login />} />
+          <Route path="/sign-in" element={<SignUp />} /> */}
         </Routes>
       )}
     </BrowserRouter>
