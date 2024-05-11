@@ -7,8 +7,8 @@ import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { links } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 
-import logo from "../data/adminlogo.png";
-import logo2 from "../data/adminlogo2.png";
+// import logo from "../data/adminlogo.png";
+// import logo2 from "../data/adminlogo2.png";
 
 const Sidebar = () => {
   const { currentColor, activeMenu, setActiveMenu, screenSize } =
